@@ -1,0 +1,268 @@
+[
+  {
+    "_id": "fin-slash-expenses-pie",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / expenses pie",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"field\":\"sum_in_target_currency\"},\"schema\":\"metric\",\"type\":\"sum\"},{\"id\":\"2\",\"params\":{\"field\":\"category.raw\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":10},\"schema\":\"segment\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"title\":\"New Visualization\",\"type\":\"pie\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-expense-type",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food expense type",
+      "visState": "{\"title\":\"fin / food expense type\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"category2.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\" AND category:food\"}},\"filter\":[{\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"value\":\"leasure\",\"disabled\":true,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"category.raw\":{\"query\":\"leasure\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-car-gasoline-timeline",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / car - gasoline timeline",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:car AND category2:gasoline\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-on-timeline",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food on timeline",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:food\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-car-expenses-total",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / car expenses total",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"total expenses\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:car\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"negate\":false,\"value\":\"leasure\"},\"query\":{\"match\":{\"category.raw\":{\"query\":\"leasure\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"negate\":false,\"value\":\"unknown\"},\"query\":{\"match\":{\"category.raw\":{\"query\":\"unknown\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-income-figure",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / income figure",
+      "visState": "{\"title\":\"fin / income figure\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"total income (BYN)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"income\\\"\",\"analyze_wildcard\":true}},\"filter\":[{\"query\":{\"query_string\":{\"query\":\"_exists_:(category2)\",\"analyze_wildcard\":true}},\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"query\",\"value\":\"_exists_:(category2)\",\"disabled\":true,\"negate\":false,\"alias\":null},\"$state\":{\"store\":\"globalState\"}},{\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"value\":\"food\",\"disabled\":true,\"negate\":false,\"alias\":null},\"query\":{\"match\":{\"category.raw\":{\"query\":\"food\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"globalState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-car-expense-structure",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / car - expense structure",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"category2.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\" AND category:car\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-total-expense",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / total expense",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"fontSize\":60,\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"total expense (BYN)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\"\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-shop-on-timeline",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food-shop on timeline",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{\"field\":\"sum_in_target_currency\"},\"schema\":\"metric\",\"type\":\"sum\"},{\"id\":\"2\",\"params\":{\"customInterval\":\"2h\",\"extended_bounds\":{},\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"title\":\"fin / food on timeline\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\" AND category:food AND category2:shop\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-shop-summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food - shop summary",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"total spent\"}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"avg cheque\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:food AND category2:shop\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-cafe-summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food - cafe summary",
+      "visState": "{\"title\":\"fin / food - shop summary\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"total spent\"}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"avg cheque\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:food AND category2:cafe\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-car-gasoline-summary",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / car - gasoline summary",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\",\"customLabel\":\"average sum\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\" AND category:car AND category2:gasoline\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-kommun-plan-structure",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / kommun-plan structure",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"tags.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"category2.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:kommun-plat\",\"analyze_wildcard\":true}},\"filter\":[{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"negate\":true,\"value\":\"travel\"},\"query\":{\"match\":{\"category.raw\":{\"query\":\"travel\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"negate\":true,\"value\":\"new-flat\"},\"query\":{\"match\":{\"category.raw\":{\"query\":\"new-flat\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"globalState\"},\"meta\":{\"alias\":null,\"apply\":true,\"disabled\":true,\"index\":\"logstash-prior*\",\"key\":\"category2.raw\",\"negate\":true,\"value\":\"kvart-plat\"},\"query\":{\"match\":{\"category2.raw\":{\"query\":\"kvart-plat\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-gasoline-monthly",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / gasoline monthly",
+      "visState": "{\"title\":\"fin / food monthly\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:car AND category2:gasoline\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-kommun-plat-monthly",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / kommun-plat monthly",
+      "visState": "{\"title\":\"fin / gasoline monthly\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:kommun-plat\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-leasure-monthly",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / leasure monthly",
+      "visState": "{\"title\":\"fin / kommun-plat monthly\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:leasure\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-expense-records",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / expense records",
+      "visState": "{\"title\":\"fin / expense records\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"5\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"category.raw\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"category2.raw\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"summary.raw\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-food-monthly",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / food monthly",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"item_type:\\\"expense\\\" AND category:food\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-leasure-exp-structure",
+    "_type": "visualization",
+    "_source": {
+      "title": "fin / leasure exp structure",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sum_in_target_currency\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"category2.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-prior*\",\"query\":{\"query_string\":{\"query\":\"item_type:\\\"expense\\\" AND category:leasure\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

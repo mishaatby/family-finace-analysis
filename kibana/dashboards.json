@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "fin-slash-food-expenses",
+    "_type": "dashboard",
+    "_source": {
+      "title": "fin / food expenses",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"fin-slash-food-expense-type\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":4,\"size_y\":4,\"col\":8,\"row\":1},{\"id\":\"fin-slash-food-shop-summary\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":7,\"size_y\":2,\"col\":1,\"row\":1},{\"id\":\"fin-slash-food-cafe-summary\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":7,\"size_y\":2,\"col\":1,\"row\":6},{\"id\":\"fin-slash-food-shop-on-timeline\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":7,\"size_y\":3,\"col\":1,\"row\":3}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-5\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-car-expenses",
+    "_type": "dashboard",
+    "_source": {
+      "title": "fin / car expenses",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"fin-slash-car-expense-structure\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":5,\"size_y\":4,\"col\":1,\"row\":3},{\"id\":\"fin-slash-car-gasoline-timeline\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":6,\"row\":3},{\"id\":\"fin-slash-car-expenses-total\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":1},{\"id\":\"fin-slash-car-gasoline-summary\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":5,\"size_y\":2,\"col\":6,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-expenses",
+    "_type": "dashboard",
+    "_source": {
+      "title": "fin / expenses",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":5,\"id\":\"fin-slash-expenses-pie\",\"panelIndex\":1,\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"fin-slash-total-expense\",\"panelIndex\":2,\"row\":3,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"fin-slash-food-expense-type\",\"panelIndex\":4,\"row\":5,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"fin-slash-income-figure\",\"panelIndex\":5,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":6,\"id\":\"fin-slash-car-expense-structure\",\"panelIndex\":6,\"row\":5,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"fin-slash-expense-records\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":9,\"size_y\":4,\"col\":1,\"row\":11},{\"id\":\"fin-slash-kommun-plan-structure\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":5,\"size_y\":3,\"col\":1,\"row\":8}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"value\":\"travel\",\"disabled\":true,\"negate\":true,\"alias\":null},\"query\":{\"match\":{\"category.raw\":{\"query\":\"travel\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"category.raw\",\"value\":\"new-flat\",\"disabled\":true,\"negate\":true,\"alias\":null},\"query\":{\"match\":{\"category.raw\":{\"query\":\"new-flat\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"logstash-prior*\",\"key\":\"category2.raw\",\"value\":\"kvart-plat\",\"disabled\":true,\"negate\":true,\"alias\":null,\"apply\":true},\"query\":{\"match\":{\"category2.raw\":{\"query\":\"kvart-plat\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "fin-slash-this-year",
+    "_type": "dashboard",
+    "_source": {
+      "title": "fin / this year",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"fin-slash-food-monthly\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":5,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"fin-slash-gasoline-monthly\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":5,\"size_y\":3,\"col\":1,\"row\":4},{\"id\":\"fin-slash-kommun-plat-monthly\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":5,\"size_y\":3,\"col\":6,\"row\":1},{\"id\":\"fin-slash-leasure-monthly\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":5,\"size_y\":3,\"col\":6,\"row\":4}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-2\":{\"vis\":{\"legendOpen\":false}},\"P-3\":{\"vis\":{\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2016-12-31T21:00:00.000Z",
+      "timeFrom": "2016-06-22T08:08:11.315Z",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  }
+]
